@@ -2,8 +2,26 @@
 if mods["SpaceMod"] then
   bobmods.lib.tech.add_new_science_pack("habitation", "token-bio", 1)
   bobmods.lib.tech.add_new_science_pack("life-support-systems", "token-bio", 1)
+  if settings.startup["add-bio-to-ftl"] then
+    bobmods.lib.tech.add_new_science_pack("ftl-theory-C", "token-bio", 1)
+    bobmods.lib.tech.add_new_science_pack("ftl-theory-D", "token-bio", 1)
+    bobmods.lib.tech.add_new_science_pack("ftl-theory-D1", "token-bio", 1)
+    bobmods.lib.tech.add_new_science_pack("ftl-theory-D2", "token-bio", 1)
+    bobmods.lib.tech.add_new_science_pack("ftl-propulsion", "token-bio", 1)
+  end
 end
 
+-- Add military science to ftl techs
+if mods["SpaceMod"] then
+  if settings.startup["add-military-to-ftl"] then
+    bobmods.lib.tech.add_new_science_pack("ftl-theory-C", "military-science-pack", 1)
+    bobmods.lib.tech.add_new_science_pack("ftl-theory-D", "military-science-pack", 1)
+    bobmods.lib.tech.add_new_science_pack("ftl-theory-D1", "military-science-pack", 1)
+    bobmods.lib.tech.add_new_science_pack("ftl-theory-D2", "military-science-pack", 1)
+    bobmods.lib.tech.add_new_science_pack("ftl-propulsion", "military-science-pack", 1)
+  end
+end
+  
 -- Remove empty tech Thermal water processing
 bobmods.lib.tech.remove_prerequisite("water-treatment-4", "thermal-water-processing")
 seablock.lib.hide_technology("thermal-water-processing")
